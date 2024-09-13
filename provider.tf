@@ -10,7 +10,7 @@ terraform {
   }
   
   backend "s3" {
-    bucket = "terraform-state-storage20240104230827817100000001"
+    bucket = "terraform-state-storage120240913135406692500000001"
     region = "eu-central-1"
     key    = "landingzone/terraform.tfstate"
     dynamodb_table = "terraform-state-storage"
