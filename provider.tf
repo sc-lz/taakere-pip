@@ -13,9 +13,9 @@ terraform {
     bucket = "terraform-state-storage120240913135406692500000001"
     region = "eu-central-1"
     key    = "landingzone/terraform.tfstate"
-    dynamodb_table = "terraform-state-storage"
+    dynamodb_table = "terraform-state-storage1"
     encrypt        = true
-    kms_key_id     = "alias/terraform-state-storage"
+    kms_key_id     = "alias/terraform-state-storage1"
   }
 }
 
