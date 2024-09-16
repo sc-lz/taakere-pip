@@ -6,8 +6,6 @@ controls = [
     control_names = [
       "PEIQUNSHAALC", // | CT.APIGATEWAY.PR.2 | Config rule | Elective
      
-
-
       //test for Guardrails filter
       
       //activated AWS-GR_S3_VERSIONING_ENABLED manually previously and now again in terraform for testing
