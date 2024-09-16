@@ -4,7 +4,7 @@ organisational_unit_root_id = "r-nmu5"
 controls = [
   {
     control_names = [
-      "UQCQWSUFRSVB", // | CT.APIGATEWAY.PR.5 | Config rule | Proactive
+      "PEIQUNSHAALC", // | CT.APIGATEWAY.PR.2 | Config rule | Elective
      
 
 
