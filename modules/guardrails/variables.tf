@@ -1,4 +1,3 @@
-# AWS Control Tower Controls (sometimes called Guardrails) Input Variable Types
 variable "organisational_unit_root_id" {
   description = "ID of aws organisational root ou"
   type        = string
