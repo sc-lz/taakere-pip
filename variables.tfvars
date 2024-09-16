@@ -4,7 +4,7 @@ organisational_unit_root_id = "r-nmu5"
 controls = [
   {
     control_names = [
-      "AWS-GR_IAM_USER_MFA_ENABLED", // | Test Control enabled manually | Config rule | Elective
+      "UQCQWSUFRSVB", // | CT.APIGATEWAY.PR.5 | Config rule | Proactive
      
 
 
