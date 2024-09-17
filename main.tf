@@ -8,11 +8,5 @@ module "control_tower_guardrails" {
 
 }
 
-import {
-  to = aws_controltower_control.guardrails
-  id = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro,arn:aws:controlcatalog:::control/b7a0rdepu2tfjgo0ddxo9waw0"
-}
-
-
 #invoke backup module
 
