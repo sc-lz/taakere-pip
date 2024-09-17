@@ -81,3 +81,6 @@ resource "aws_controltower_control" "guardrails" {
   target_identifier = local.ous_id_to_arn_map[each.value[1]]
 
 }
+
+# terraform import aws_controltower_control.guardrails arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro,arn:aws:controlcatalog:::control/b7a0rdepu2tfjgo0ddxo9waw0
+
