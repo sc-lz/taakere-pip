@@ -1,15 +1,6 @@
 # AWS Control Tower Controls (sometimes called Guardrails) Terraform Module
 data "aws_region" "current" {}
-#data "aws_organizations_organization" "organization" {}
-
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
-  }
-}
+data "aws_organizations_organization" "organization" {}
 
 # Get OUs data resources up to five levels of OUs deep under a root (maximum nesting quota limit)
 data "aws_organizations_organizational_units" "root" {
@@ -90,4 +81,3 @@ resource "aws_controltower_control" "guardrails" {
   target_identifier = local.ous_id_to_arn_map[each.value[1]]
 
 }
-
