@@ -8,11 +8,10 @@ resource "aws_controltower_control" "guardrails" {
   target_identifier = local.ous_id_to_arn_map[each.value[1]]
 
 }
-
+*/
 
 resource "aws_controltower_control" "guardrails" {
-  control_identifier = "CT.APIGATEWAY.PR.2"
+  control_identifier = "arn:aws:controlcatalog:::control/b7a0rdepu2tfjgo0ddxo9waw0"
   target_identifier = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro"
 }
 
-*/
