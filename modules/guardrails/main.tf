@@ -82,15 +82,6 @@ resource "aws_controltower_control" "guardrails" {
 
 }
 
-data "aws_controltower_controls" "this" {
-
-  target_identifier = [
-    for x in data.aws_organizations_organizational_units.root.children :
-    x.arn if x.name == "Security"
-  ][0]
-
-}
-
 # API controlIdentifier CT.APIGATEWAY.PR.2: arn:aws:controlcatalog:::control/b7a0rdepu2tfjgo0ddxo9waw0
 # API controlIdentifier AWS-GR_CLOUDTRAIL_CHANGE_PROHIBITED: arn:aws:controltower:eu-central-1::control/AWS-GR_CLOUDTRAIL_CHANGE_PROHIBITED
 # API targetIdentifier: arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro
