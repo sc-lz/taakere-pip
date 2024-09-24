@@ -91,12 +91,12 @@ data "aws_controltower_controls" "this" {
 
 }
 
+# API controlIdentifier CT.APIGATEWAY.PR.2: arn:aws:controlcatalog:::control/b7a0rdepu2tfjgo0ddxo9waw0
+# API controlIdentifier AWS-GR_CLOUDTRAIL_CHANGE_PROHIBITED: arn:aws:controltower:eu-central-1::control/AWS-GR_CLOUDTRAIL_CHANGE_PROHIBITED
+# API targetIdentifier: arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro
 
-# terraform import aws_controltower_control.guardrails arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro,arn:aws:controlcatalog:::control/b7a0rdepu2tfjgo0ddxo9waw0
 
 # List buckets: aws s3api list-buckets --profile MGM  
+# List controls: aws controltower list-enabled-controls --target-identifier arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro --profile MGMN --region eu-central-1
 
-# List controls: aws controltower list-enabled-controls --target-identifier arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro --profile MGM
-
-# terraform import 'aws_controltower_control.guardrails["<control_identifier>:<target_identifier>"]' <target_identifier>,<control_identifier>
-# terraform import 'aws_controltower_control.guardrails["arn:aws:controlcatalog:::control/b7a0rdepu2tfjgo0ddxo9waw0:arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro"]' arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro,arn:aws:controlcatalog:::control/b7a0rdepu2tfjgo0ddxo9waw0
+# terraform import aws_controltower_control.guardrails arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro,arn:aws:controltower:eu-central-1::control/AWS-GR_CLOUDTRAIL_CHANGE_PROHIBITED
