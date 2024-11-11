@@ -9,9 +9,10 @@ resource "aws_controltower_control" "guardrails" {
 
 }
 */
-
+/*
 resource "aws_controltower_control" "guardrails_import_v3" {
   control_identifier = ""
   target_identifier = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro"
 }
 
+*/
