@@ -9,10 +9,21 @@ resource "aws_controltower_control" "guardrails" {
 
 }
 */
+
 /*
-resource "aws_controltower_control" "guardrails_import_v3" {
+
+resource "aws_controltower_control" "guardrails_import_v4" {
   control_identifier = ""
   target_identifier = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro"
 }
 
+
+
+import {
+  to = aws_controltower_control.example
+  id = "arn:aws:organizations::123456789101:ou/o-qqaejywet/ou-qg5o-ufbhdtv3,arn:aws:controltower:us-east-1::control/WTDSMKDKDNLE"
+}
+
 */
+
+
