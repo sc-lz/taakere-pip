@@ -15,6 +15,7 @@ import {
  */
 
  //Code to import multiple guardrails at once
+
 variable "control_names" {
   type = list(string)
   default = [
@@ -35,7 +36,7 @@ variable "control_base_arn" {
   default = "arn:aws:controltower:eu-central-1::control"
 }
 
-resource "aws_controltower_control" "guardrails" {
+resource "aws_controltower_control" "import_guardrails" {
   for_each = { for name in var.control_names : name => name }
 
   control_identifier = "${var.control_base_arn}/${each.value}"
@@ -48,7 +49,12 @@ resource "null_resource" "import_guardrails" {
 
   provisioner "local-exec" {
     command = <<EOT
-terraform import aws_controltower_control.guardrails[\"${each.key}\"] ${var.ou_arn},${var.control_base_arn}/${each.key}
+cat <<EOF >> import.tf
+import {
+  to = aws_controltower_control.import_guardrails["${each.key}"]
+  id = "${var.ou_arn},${var.control_base_arn}/${each.key}"
+}
+EOF
 EOT
   }
 }
