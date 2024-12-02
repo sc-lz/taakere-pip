@@ -16,3 +16,17 @@ controls = [
 
 
 # Values for Backup policy module.
+
+
+//Import
+
+// Import variables for ARNs construction
+control_names = [
+  "URQEHVTSKLLB",  # CT.CLOUDWATCH.PR.2
+  "AWS-GR_CLOUDTRAIL_CHANGE_PROHIBITED",  # Another control
+  "GR_CLOUDTRAIL_CLOUDWATCH_LOGS_ENABLED"
+  # Add more control names here
+]
+
+ou_arn = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro"
+control_base_arn = "arn:aws:controltower:eu-central-1::control"
