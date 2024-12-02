@@ -17,8 +17,6 @@ import {
  //Code to import multiple guardrails at once
 # Define the list of Guardrails with control and target identifiers
 
-# main.tf
-
 variable "guardrails_import_list" {
   type = list(string)
   default = [
@@ -40,9 +38,43 @@ resource "aws_controltower_control" "import_guardrails" {
   target_identifier  = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro"
 }
 
+# Import each resource one by one, manually specified
 import {
-  for_each = toset(var.guardrails_import_list)
+  id = "arn:aws:controltower:eu-central-1::control/k4izcjxhukijhajp6ks5mjxk"
+  to = aws_controltower_control.import_guardrails["k4izcjxhukijhajp6ks5mjxk"]
+}
 
-  id  = each.value
-  to  = aws_controltower_control.import_guardrails
+import {
+  id = "arn:aws:controltower:eu-central-1::control/AWS-GR_CLOUDTRAIL_CHANGE_PROHIBITED"
+  to = aws_controltower_control.import_guardrails["AWS-GR_CLOUDTRAIL_CHANGE_PROHIBITED"]
+}
+
+import {
+  id = "arn:aws:controltower:eu-central-1::control/AWS-GR_CLOUDTRAIL_CLOUDWATCH_LOGS_ENABLED"
+  to = aws_controltower_control.import_guardrails["AWS-GR_CLOUDTRAIL_CLOUDWATCH_LOGS_ENABLED"]
+}
+
+import {
+  id = "arn:aws:controltower:eu-central-1::control/AWS-GR_CLOUDTRAIL_ENABLED"
+  to = aws_controltower_control.import_guardrails["AWS-GR_CLOUDTRAIL_ENABLED"]
+}
+
+import {
+  id = "arn:aws:controltower:eu-central-1::control/AWS-GR_CLOUDTRAIL_VALIDATION_ENABLED"
+  to = aws_controltower_control.import_guardrails["AWS-GR_CLOUDTRAIL_VALIDATION_ENABLED"]
+}
+
+import {
+  id = "arn:aws:controltower:eu-central-1::control/AWS-GR_CLOUDWATCH_EVENTS_CHANGE_PROHIBITED"
+  to = aws_controltower_control.import_guardrails["AWS-GR_CLOUDWATCH_EVENTS_CHANGE_PROHIBITED"]
+}
+
+import {
+  id = "arn:aws:controltower:eu-central-1::control/AWS-GR_CONFIG_AGGREGATION_AUTHORIZATION_POLICY"
+  to = aws_controltower_control.import_guardrails["AWS-GR_CONFIG_AGGREGATION_AUTHORIZATION_POLICY"]
+}
+
+import {
+  id = "arn:aws:controltower:eu-central-1::control/AWS-GR_CONFIG_AGGREGATION_CHANGE_PROHIBITED"
+  to = aws_controltower_control.import_guardrails["AWS-GR_CONFIG_AGGREGATION_CHANGE_PROHIBITED"]
 }
