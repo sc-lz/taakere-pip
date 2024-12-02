@@ -15,46 +15,32 @@ import {
  */
 
  //Code to import multiple guardrails at once
+# Define the list of Guardrails with control and target identifiers
 
-variable "control_names" {
-  type = list(string)
+variable "guardrails_import_list" {
+  type = list(object({
+    control_identifier = string
+    target_identifier  = string
+  }))
   default = [
-    "URQEHVTSKLLB",  # CT.CLOUDWATCH.PR.2
-    "AWS-GR_CLOUDTRAIL_CHANGE_PROHIBITED", 
-    "GR_CLOUDTRAIL_CLOUDWATCH_LOGS_ENABLED"
-    # Add more control names here
+    {
+      control_identifier = "arn:aws:controltower:eu-central-1::control/URQEHVTSKLLB"
+      target_identifier  = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro"
+    },
+    {
+      control_identifier = "arn:aws:controltower:eu-central-1::control/GR_CLOUDTRAIL_CLOUDWATCH_LOGS_ENABLED"
+      target_identifier  = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e3ro"
+    },
+    {
+      control_identifier = "arn:aws:controltower:eu-central-1::control/OBZIVWNWNIFK"
+      target_identifier  = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e3ro"
+    }
   ]
 }
 
-variable "ou_arn" {
-  type    = string
-  default = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro"
-}
+resource "aws_controltower_control" "import_guardrail" {
+  for_each = { for idx, guardrail in var.guardrails_import_list : idx => guardrail }
 
-variable "control_base_arn" {
-  type    = string
-  default = "arn:aws:controltower:eu-central-1::control"
-}
-
-resource "aws_controltower_control" "import_guardrails" {
-  for_each = { for name in var.control_names : name => name }
-
-  control_identifier = "${var.control_base_arn}/${each.value}"
-  target_identifier  = var.ou_arn
-}
-
-# Dynamic import blocks
-resource "null_resource" "import_guardrails" {
-  for_each = { for name in var.control_names : name => name }
-
-  provisioner "local-exec" {
-    command = <<EOT
-cat <<EOF >> import.tf
-import {
-  to = aws_controltower_control.import_guardrails["${each.key}"]
-  id = "${var.ou_arn},${var.control_base_arn}/${each.key}"
-}
-EOF
-EOT
-  }
+  control_identifier = each.value.control_identifier
+  target_identifier  = each.value.target_identifier
 }
