@@ -44,3 +44,10 @@ resource "aws_controltower_control" "import_guardrail" {
   control_identifier = each.value.control_identifier
   target_identifier  = each.value.target_identifier
 }
+
+import {  
+  for_each = { for idx, guardrail in var.guardrails_import_list : idx => guardrail }
+
+  to = aws_controltower_control.import_guardrail
+  id = join(",", [each.value.target_identifier, each.value.control_identifier])
+  }
