@@ -1,23 +1,31 @@
-/*
+
 //This code works to import one guardrail at a time
 
-resource "aws_controltower_control" "guardrails_v6" {
+resource "aws_controltower_control" "guardrails_import_1" {
     control_identifier = "arn:aws:controltower:eu-central-1::control/URQEHVTSKLLB" #CT.CLOUDWATCH.PR.2
     target_identifier = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro"
     }
 
+resource "aws_controltower_control" "guardrails_import_2" {
+    control_identifier = "arn:aws:controltower:eu-central-1::control/AWS-GR_CLOUDTRAIL_CHANGE_PROHIBITED"
+    target_identifier = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro"
+    }    
+
 
 import {  
-  to = aws_controltower_control.guardrails_v6 
+  to = aws_controltower_control.guardrails_import_1 
   id = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro,arn:aws:controltower:eu-central-1::control/URQEHVTSKLLB"
   }
  
- */
+ import {  
+  to = aws_controltower_control.guardrails_import_2 
+  id = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro,arn:aws:controltower:eu-central-1::control/AWS-GR_CLOUDTRAIL_CHANGE_PROHIBITED"
+  }
 
  //Code to import multiple guardrails at once
 # Define the list of Guardrails with control and target identifiers
 
-
+/*
 variable "guardrails_import_list" {
   type = list(string)
   default = [
@@ -47,3 +55,4 @@ resource "aws_controltower_control" "import_guardrails_with_import" {
     to  = aws_controltower_control.import_guardrails_dynamic[each.key]
   }
 }
+*/
