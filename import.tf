@@ -22,13 +22,13 @@ resource "aws_controltower_control" "guardrails_import_2" {
   id = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro,arn:aws:controltower:eu-central-1::control/AWS-GR_CLOUDTRAIL_CHANGE_PROHIBITED"
   }
 
-resource "aws_controltower_control" "guardrails_import_2x" {
+resource "aws_controltower_control" "guardrails_import_3" {
     control_identifier = "arn:aws:controltower:eu-central-1::control/AWS-GR_CLOUDTRAIL_ENABLED" //Mandatory Guardrail
     target_identifier = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro"
     }    
 
  import {  
-  to = aws_controltower_control.guardrails_import_2x 
+  to = aws_controltower_control.guardrails_import_3 
   id = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro,arn:aws:controltower:eu-central-1::control/AWS-GR_CLOUDTRAIL_ENABLED"
   }
 
@@ -67,3 +67,5 @@ resource "aws_controltower_control" "import_guardrails_with_import" {
   }
 }
 */
+
+
