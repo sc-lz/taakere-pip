@@ -1,6 +1,6 @@
 
 //This code works to import one guardrail at a time
-/*
+
 resource "aws_controltower_control" "guardrails_import_1" {
     control_identifier = "arn:aws:controltower:eu-central-1::control/OBZIVWNWNIFK" 
     target_identifier = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro"
@@ -68,6 +68,8 @@ resource "aws_controltower_control" "import_guardrails_with_import" {
 }
 */
 
+
+/*
 locals {
   target_identifier = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro"
   guardrails = {
@@ -95,3 +97,4 @@ import {
   id       = "${local.target_identifier},${each.value.control_identifier}"
   to       = aws_controltower_control.guardrails[each.key]
 }
+*/
