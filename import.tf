@@ -1,34 +1,35 @@
 
 //This code works to import one guardrail at a time
-
-resource "aws_controltower_control" "guardrails_import_1x" {
-    control_identifier = "arn:aws:controltower:eu-central-1::control/OBZIVWNWNIFK" 
+/*
+resource "aws_controltower_control" "guardrails_import_1" {
+    control_identifier = "arn:aws:controltower:eu-central-1::control/AWS-GR_CONFIG_AGGREGATION_AUTHORIZATION_POLICY" 
     target_identifier = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro"
     }
 
 import {  
-  to = aws_controltower_control.guardrails_import_1x
-  id = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro,arn:aws:controltower:eu-central-1::control/OBZIVWNWNIFK"
+  to = aws_controltower_control.guardrails_import_1
+  id = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro,arn:aws:controltower:eu-central-1::control/AWS-GR_CONFIG_AGGREGATION_AUTHORIZATION_POLICY"
   }
+
   
 
-resource "aws_controltower_control" "guardrails_import_2x" {
+resource "aws_controltower_control" "guardrails_import_2" {
     control_identifier = "arn:aws:controltower:eu-central-1::control/AWS-GR_CLOUDTRAIL_CHANGE_PROHIBITED" //Mandatory Guardrail
     target_identifier = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro"
     }    
 
  import {  
-  to = aws_controltower_control.guardrails_import_2x 
+  to = aws_controltower_control.guardrails_import_2
   id = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro,arn:aws:controltower:eu-central-1::control/AWS-GR_CLOUDTRAIL_CHANGE_PROHIBITED"
   }
-/*
-resource "aws_controltower_control" "guardrails_import3" {
+
+resource "aws_controltower_control" "guardrails_import_3" {
     control_identifier = "arn:aws:controltower:eu-central-1::control/AWS-GR_CLOUDTRAIL_ENABLED" //Mandatory Guardrail
     target_identifier = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro"
     }    
 
  import {  
-  to = aws_controltower_control.guardrails_import3 
+  to = aws_controltower_control.guardrails_import_3 
   id = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro,arn:aws:controltower:eu-central-1::control/AWS-GR_CLOUDTRAIL_ENABLED"
   }
 
@@ -40,7 +41,7 @@ resource "aws_controltower_control" "guardrails_import3" {
 variable "guardrails_import_list" {
   type = list(string)
   default = [
-    "arn:aws:controltower:eu-central-1::control/k4izcjxhukijhajp6ks5mjxk", 
+    "aarn:aws:controltower:eu-central-1::control/AWS-GR_CONFIG_AGGREGATION_AUTHORIZATION_POLICY", 
     "arn:aws:controltower:eu-central-1::control/AWS-GR_CLOUDTRAIL_CHANGE_PROHIBITED", 
     "arn:aws:controltower:eu-central-1::control/AWS-GR_CLOUDTRAIL_CLOUDWATCH_LOGS_ENABLED"
   ]
@@ -69,12 +70,12 @@ resource "aws_controltower_control" "import_guardrails_with_import" {
 */
 
 
-/*
+
 locals {
   target_identifier = "arn:aws:organizations::268702346055:ou/o-9ao1kn1kyw/ou-nmu5-5l01e2ro"
   guardrails = {
     guardrail_1 = {
-      control_identifier = "arn:aws:controltower:eu-central-1::control/OBZIVWNWNIFK"
+      control_identifier = "arn:aws:controltower:eu-central-1::control/AWS-GR_CONFIG_AGGREGATION_AUTHORIZATION_POLICY"
     }
     guardrail_2 = {
       control_identifier = "arn:aws:controltower:eu-central-1::control/AWS-GR_CLOUDTRAIL_CHANGE_PROHIBITED"
@@ -97,4 +98,3 @@ import {
   id       = "${local.target_identifier},${each.value.control_identifier}"
   to       = aws_controltower_control.guardrails[each.key]
 }
-*/
