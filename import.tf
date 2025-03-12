@@ -16,14 +16,11 @@ locals {
       control_identifier = "arn:aws:controltower:eu-central-1::control/AWS-GR_CLOUDTRAIL_ENABLED"
     }
     guardrail_4 = {
-      control_identifier = "arn:aws:controltower:eu-central-1::control/AWS-GR_RESTRICT_ROOT_USER"
+      control_identifier = "arn:aws:controltower:eu-central-1::control/AWS-GR_IAM_USER_MFA_ENABLED"
     }
-    guardrail_4 = {
-       control_identifier = "arn:aws:controltower:eu-central-1::control/AWS-GR_IAM_USER_MFA_ENABLED"
-     }
-     guardrail_5 = {
-       control_identifier = "arn:aws:controltower:eu-central-1::control/TAYPGUHJACMN"
-     }
+    guardrail_5 = {
+      control_identifier = "arn:aws:controltower:eu-central-1::control/AWS-GR_LOG_GROUP_POLICY"
+    }
   }
 
 }
