@@ -21,6 +21,9 @@ locals {
     guardrail_4 = {
        control_identifier = "arn:aws:controltower:eu-central-1::control/AWS-GR_IAM_USER_MFA_ENABLED"
      }
+     guardrail_5 = {
+       control_identifier = "arn:aws:controltower:eu-central-1::control/TAYPGUHJACMN"
+     }
   }
 
 }
