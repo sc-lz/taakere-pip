@@ -21,6 +21,9 @@ locals {
     guardrail_5 = {
       control_identifier = "arn:aws:controltower:eu-central-1::control/AWS-GR_LOG_GROUP_POLICY"
     }
+    guardrail_6 = {
+      control_identifier = "arn:aws:controltower:eu-central-1::control/TAYPGUHJACMN"
+    }
   }
 
 }
