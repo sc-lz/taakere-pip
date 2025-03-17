@@ -24,6 +24,12 @@ locals {
     guardrail_6 = {
       control_identifier = "arn:aws:controltower:eu-central-1::control/XHEVQAZTSEAZ" //CT.APIGATEWAY.PR.1
     }
+    guardrail_7 = {
+      control_identifier = "arn:aws:controltower:eu-central-1::control/PEIQUNSHAALC" //CT.APIGATEWAY.PR.2
+    }
+    guardrail_8 = {
+      control_identifier = "arn:aws:controltower:eu-central-1::control/TAYPGUHJACMN" //CT.APIGATEWAY.PR.3
+    }
   }
 
 }
