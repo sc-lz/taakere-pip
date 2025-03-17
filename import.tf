@@ -22,7 +22,7 @@ locals {
       control_identifier = "arn:aws:controltower:eu-central-1::control/AWS-GR_LOG_GROUP_POLICY"
     }
     guardrail_6 = {
-      control_identifier = "arn:aws:controltower:eu-central-1::control/TAYPGUHJACMN"
+      control_identifier = "arn:aws:controltower:eu-central-1::control/XHEVQAZTSEAZ" //CT.APIGATEWAY.PR.1
     }
   }
 
