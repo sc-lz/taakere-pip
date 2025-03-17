@@ -29,7 +29,7 @@ locals {
     }
     
     guardrail_8 = {
-      control_identifier = "arn:aws:controltower:eu-central-1::control/1nbiz41n920vxbjbyfh05h0v6" //CT.APIGATEWAY.PR.3 with global identifier
+      control_identifier = "arn:aws:controltower:eu-central-1::control/TAYPGUHJACMN" //CT.APIGATEWAY.PR.3
     }
     
   }
