@@ -33,7 +33,7 @@ locals {
     }
 
     guardrail_9 = {
-      control_identifier = "arn:aws:controlcatalog:::control/6g1vku0mw1b12o9jhuouxj8ia" //AWS-GR_LAMBDA_CHANGE_PROHIBITED
+      control_identifier = "controlIdentifier: arn:aws:controltower:eu-central-1::control/AWS-GR_LAMBDA_CHANGE_PROHIBITED" //AWS-GR_LAMBDA_CHANGE_PROHIBITED
     }
 
 
