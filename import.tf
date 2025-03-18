@@ -43,7 +43,9 @@ locals {
     guardrail_10 = {
       control_identifier = "arn:aws:controlcatalog:::control/8ui9y3oace2513xarz8aqojl7" //AWS-GR_RESTRICT_ROOT_USER_ACCESS_KEYS
     }
-
+    guardrail_10 = {
+      control_identifier = "arn:aws:controlcatalog:::control/3qpnxfs5vtzd2v2ql2f2mu7tq" //CT.LAMBDA.PV.1
+    }
     
     
   }
