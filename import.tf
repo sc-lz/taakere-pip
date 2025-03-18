@@ -40,9 +40,10 @@ locals {
       control_identifier = "arn:aws:controlcatalog:::control/2j9gjxqfo040xtx8kd1jf4ni6" //AWS-GR_EBS_OPTIMIZED_INSTANCE
     }
 
+/*
     guardrail_11 = {
       control_identifier = "arn:aws:controlcatalog:::control/8ui9y3oace2513xarz8aqojl7" //AWS-GR_RESTRICT_ROOT_USER_ACCESS_KEYS
-    }
+    }*/
 
     guardrail_12 = {
       control_identifier = "arn:aws:controlcatalog:::control/3qpnxfs5vtzd2v2ql2f2mu7tq" //CT.LAMBDA.PV.1
@@ -52,6 +53,11 @@ locals {
       control_identifier = "arn:aws:controlcatalog:::control/1csaqxiy3h463r51ehmcygrs2" //CT.DOCUMENTDB.PR.1
     }
 
+    guardrail_14 = {
+      control_identifier = "arn:aws:controlcatalog:::control/5kvme4m5d2b4d7if2fs5yg2ui" //AWS-GR_RESTRICT_ROOT_USER
+    }
+
+    
 
   }
 
