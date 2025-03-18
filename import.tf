@@ -36,6 +36,9 @@ locals {
       control_identifier = "arn:aws:controltower:eu-central-1::control/AWS-GR_LAMBDA_CHANGE_PROHIBITED" //AWS-GR_LAMBDA_CHANGE_PROHIBITED
     }
 
+    guardrail_10 = {
+      control_identifier = "arn:aws:controlcatalog:::control/2j9gjxqfo040xtx8kd1jf4ni6" //AWS-GR_EBS_OPTIMIZED_INSTANCE
+    }
 
     
   }
