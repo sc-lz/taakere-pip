@@ -46,7 +46,10 @@ locals {
     guardrail_12 = {
       control_identifier = "arn:aws:controlcatalog:::control/3qpnxfs5vtzd2v2ql2f2mu7tq" //CT.LAMBDA.PV.1
     }
-    
+
+    guardrail_13 = {
+      control_identifier = "arn:aws:controlcatalog:::control/1csaqxiy3h463r51ehmcygrs2" //CT.DOCUMENTDB.PR.1
+    }
     
   }
 
