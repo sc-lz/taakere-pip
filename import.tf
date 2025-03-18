@@ -40,6 +40,11 @@ locals {
       control_identifier = "arn:aws:controlcatalog:::control/2j9gjxqfo040xtx8kd1jf4ni6" //AWS-GR_EBS_OPTIMIZED_INSTANCE
     }
 
+    guardrail_10 = {
+      control_identifier = "arn:aws:controlcatalog:::control/8ui9y3oace2513xarz8aqojl7" //AWS-GR_RESTRICT_ROOT_USER_ACCESS_KEYS
+    }
+
+    
     
   }
 
